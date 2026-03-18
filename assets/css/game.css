@@ -1,0 +1,87 @@
+
+.detail-panel { background: var(--surface); border: 1px solid #fff2; border-radius: 20px; max-width: 1400px; width: 96%; margin: 20px auto; overflow: hidden; position: relative; box-shadow: 0 10px 40px #00000050; }
+.detail-bg { position: absolute; top: 0; left: 0; width: 100%; height: 350px; background-size: cover; background-position: center; filter: blur(45px) brightness(0.35); z-index: 0; transform: scale(1.1); pointer-events: none; }
+.detail-content { position: relative; z-index: 1; padding: 25px; display: grid; grid-template-columns: 1fr 380px; gap: 25px; align-items: start; }
+
+/* Left Main Panel */
+.detail-main { display: flex; flex-direction: column; gap: 20px; width: 100%; }
+.frame-container { width: 100%; aspect-ratio: 16 / 9; max-height: 85vh; background: #000; border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; overflow: hidden; position: relative; box-shadow: 0 30px 70px rgba(0,0,0,0.8); display: flex; justify-content: center; align-items: center; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); margin: 0; }
+.game-iframe { width: 100%; height: 100%; border: none; display: block; background: #000; transition: opacity 0.3s; }
+.frame-container:not(.active) .game-iframe { pointer-events: none; opacity: 0.8; }
+.frame-container::after { 
+  content: 'Click to Play'; 
+  position: absolute; 
+  inset: 0; 
+  background: rgba(0,0,0,0.3); 
+  backdrop-filter: blur(8px); 
+  border-radius: inherit;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-family: 'Fredoka One', cursive;
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: #fff; 
+  z-index: 5; 
+  transition: all 0.3s ease; 
+  pointer-events: none; 
+  opacity: 0; 
+}
+.frame-container:not(.active)::after { opacity: 1; pointer-events: auto; cursor: pointer; }
+.frame-container:not(.active):hover::after { background: rgba(0,0,0,0.1); backdrop-filter: blur(4px); font-size: 26px; }
+.frame-container.active::after { opacity: 0; pointer-events: none; }
+
+.frame-container:fullscreen, .frame-container.fullscreen { display: block; align-items: stretch; justify-content: center; background: #000; border-radius: 0; width: 100vw; height: 100vh; max-width: none; aspect-ratio: auto !important; margin: 0; border: none; z-index: 1000; }
+.frame-container:fullscreen .game-iframe, .frame-container.fullscreen .game-iframe { width: 100%; height: 100%; max-width: 100%; aspect-ratio: auto !important; margin: 0; }
+
+.detail-info-row { display: flex; gap: 24px; background: rgba(0,0,0,0.3); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 22px; box-shadow: 0 15px 45px rgba(0,0,0,0.4); align-items: flex-start; }
+.detail-img { width: 120px; height: 120px; object-fit: cover; border-radius: 18px; box-shadow: 0 15px 35px rgba(0,0,0,0.8); border: 2px solid rgba(255,255,255,0.1); flex-shrink: 0; }
+.detail-info { flex: 1; display: flex; flex-direction: column; align-items: flex-start; text-align: left; min-height: 120px; padding: 0; }
+.detail-name { font-family: 'Fredoka One', cursive; font-size: 28px; margin: 0 0 8px 0; text-shadow: 0 4px 12px rgba(0,0,0,0.5); line-height: 1.1; color: #fff; }
+.detail-meta-row { display: flex; align-items: center; gap: 12px; margin-bottom: 0; flex-wrap: wrap; }
+.live-count-badge { display: inline-flex; align-items: center; gap: 5px; background: rgba(43,255,158,0.1); padding: 5px 12px; border-radius: 20px; border: 1px solid rgba(43,255,158,0.3); font-size: 11px; font-weight: 800; color: var(--success); box-shadow: 0 0 15px rgba(43,255,158,0.1); }
+.live-dot-new { width: 7px; height: 7px; background: var(--success); border-radius: 50%; box-shadow: 0 0 8px var(--success); animation: pulse-dot 1.5s ease-in-out infinite; }
+.detail-tags { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-start; }
+.detail-tag { background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 20px; font-size: 11px; font-weight: 800; color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+.game-actions { display: flex; gap: 12px; justify-content: flex-start; width: 100%; margin-top: auto; padding-top: 15px; }
+
+.btn-action { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--text); padding: 9px 22px; border-radius: 12px; cursor: pointer; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 14px; display: flex; align-items: center; gap: 8px; transition: all 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+.btn-action:hover { box-shadow: 0 6px 16px rgba(0,0,0,0.4); border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); }
+.btn-action.active { background: #6366f1; border-color: #818cf8; box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); color: #fff; }
+
+.btn-like.active { background: #2bff9e; border-color: #34d399; color: #000; box-shadow: 0 0 20px rgba(43, 255, 158, 0.3); }
+
+.rating-badge { background: rgba(255,190,48,0.1); color: var(--accent2); padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 800; border: 1px solid rgba(255,190,48,0.2); }
+.mute-btn { display: none !important; }
+
+.detail-desc-box { background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 35px 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+.detail-desc-box h1, .detail-desc-box h2, .detail-desc-box h3 { font-family: 'Fredoka One', cursive; color: #fff; line-height: 1.4; margin: 28px 0 14px; text-shadow: 0 2px 5px rgba(0,0,0,0.4); }
+.detail-desc-box h1:first-child, .detail-desc-box h2:first-child, .detail-desc-box h3:first-child { margin-top: 0; }
+.detail-desc-box h1 { font-size: 26px; }
+.detail-desc-box h2 { font-size: 22px; color: var(--accent2); }
+.detail-desc-box h3 { font-size: 18px; }
+.detail-desc-box p { color: #ccd0e8; font-size: 15px; line-height: 1.8; margin-bottom: 18px; text-align: left; font-family: 'Nunito', sans-serif;}
+.detail-desc-box p:last-child { margin-bottom: 0; }
+.detail-desc-box strong, .detail-desc-box b { font-weight: 900; color: #ffffff; text-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+.detail-desc-box ul, .detail-desc-box ol { margin: 0 0 20px 24px; color: #ccd0e8; font-size: 15px; line-height: 1.8; font-family: 'Nunito', sans-serif; }
+.detail-desc-box li { margin-bottom: 6px; }
+
+/* Right Panel - Suggestions */
+.detail-right { display: flex; flex-direction: column; padding-right: 5px; }
+.detail-similar-ttl { font-family: 'Fredoka One', cursive; font-size: 18px; margin-bottom: 20px; padding-bottom: 8px; text-align: left; border-bottom: 2px solid var(--accent); display: inline-block; width: fit-content; }
+.detail-right .games-grid { display: grid; grid-template-columns: repeat(1, 1fr); gap: 15px; }
+@media(min-width: 1301px) {
+  .detail-right .games-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.hero { margin: 22px 26px 6px; border-radius: 18px; background: linear-gradient(135deg, #1a0a2e, #0f1f4a, #001a2e); padding: 30px 34px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; }
+.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 50%, #ff5f5720, transparent 60%), radial-gradient(ellipse at 20% 50%, #2bff9e18, transparent 60%); }
+.hero-content { position: relative; z-index: 1; }
+.hero-badge { display: inline-block; background: var(--accent); color: #fff; font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; margin-bottom: 11px; }
+.hero h1 { font-family: 'Fredoka One', cursive; font-size: 32px; line-height: 1.2; margin-bottom: 9px; }
+.hero p { color: #9ba3cc; font-size: 13.5px; max-width: 340px; line-height: 1.6; }
+.hero-emojis { position: relative; z-index: 1; display: flex; gap: 12px; font-size: 46px; opacity: .85; }
+.hero-emojis span { animation: float 3s ease-in-out infinite; display: inline-block; }
+.hero-emojis span:nth-child(2) { animation-delay: .5s; }
+.hero-emojis span:nth-child(3) { animation-delay: 1s; }
+@keyframes float { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-10px) } }

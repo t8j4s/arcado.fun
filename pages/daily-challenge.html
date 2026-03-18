@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arcado - 📅 Daily Challenge</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/game.css">
+  <link rel="stylesheet" href="/assets/css/responsive.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕹️</text></svg>">
+</head>
+<body>
+  <div id="sidebarContainer"></div>
+  <main class="main">
+    <div id="headerContainer"></div>
+    <div class="page-hdr">
+      <div class="page-ttl">📅 Daily Challenge</div>
+      <div class="page-sub">Complete all 3 challenges to earn bonus points and achievements!</div>
+    </div>
+    
+    <div id="dailyCompletionOverlay" style="display:none; margin: 0 26px 20px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 18px; padding: 24px; text-align: center; color: #fff; animation: slideIn 0.5s ease-out;">
+        <div style="font-size: 40px; margin-bottom: 10px;">🏆</div>
+        <div style="font-family: 'Fredoka One', cursive; font-size: 28px; margin-bottom: 5px;">Challenge Completed!</div>
+        <div style="font-size: 14px; opacity: 0.9; font-weight: 600;">You've mastered today's games. Come back tomorrow for new challenges!</div>
+    </div>
+
+    <div id="dailyGamesContainer" style="margin: 18px 26px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+        <!-- Daily games will be injected here -->
+    </div>
+
+    <div class="cd-row" style="margin: 0 26px 40px; display:flex; gap:12px; max-width: 400px;">
+      <div style="flex: 1; color: var(--muted); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 8px;">
+          <span>Next Refresh In:</span>
+      </div>
+      <div class="cd-box" style="background:var(--card); border:1px solid #fff1; border-radius:13px; padding:10px 14px; flex:1; text-align:center;">
+        <div class="cd-val" id="cdH" style="font-family:'Fredoka One',cursive; font-size:24px; color:var(--accent2); line-height:1;">00</div>
+        <div class="cd-lbl" style="font-size:8px; font-weight:800; color:var(--muted); margin-top:2px;">HRS</div>
+      </div>
+      <div class="cd-box" style="background:var(--card); border:1px solid #fff1; border-radius:13px; padding:10px 14px; flex:1; text-align:center;">
+        <div class="cd-val" id="cdM" style="font-family:'Fredoka One',cursive; font-size:24px; color:var(--accent2); line-height:1;">00</div>
+        <div class="cd-lbl" style="font-size:8px; font-weight:800; color:var(--muted); margin-top:2px;">MIN</div>
+      </div>
+      <div class="cd-box" style="background:var(--card); border:1px solid #fff1; border-radius:13px; padding:10px 14px; flex:1; text-align:center;">
+        <div class="cd-val" id="cdS" style="font-family:'Fredoka One',cursive; font-size:24px; color:var(--accent2); line-height:1;">00</div>
+        <div class="cd-lbl" style="font-size:8px; font-weight:800; color:var(--muted); margin-top:2px;">SEC</div>
+      </div>
+    </div>
+
+  <style>
+    @keyframes slideIn {
+        from { transform: translateY(-20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    .progress-bar {
+        height: 8px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 4px;
+        margin: 12px 0;
+        overflow: hidden;
+    }
+    .progress-fill {
+        height: 100%;
+        background: var(--accent);
+        width: 0%;
+        transition: width 0.5s ease;
+    }
+    .daily-card {
+        transition: transform 0.3s, border-color 0.3s;
+        border: 1px solid #fff1;
+    }
+    .daily-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent);
+    }
+    .daily-card.completed {
+        border-color: #10b981;
+    }
+    .daily-card.completed .progress-fill {
+        background: #10b981;
+    }
+  </style>
+
+    <div id="footerContainer"></div>
+  </main>
+  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/daily.js?v=21540"></script>
+</body>
+</html>

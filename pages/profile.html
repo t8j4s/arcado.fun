@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arcado - 👤 My Profile</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/game.css">
+  <link rel="stylesheet" href="/assets/css/responsive.css">
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕹️</text></svg>">
+</head>
+<body>
+  <div id="sidebarContainer"></div>
+  <main class="main">
+    <div id="headerContainer"></div>
+    <div class="page-hdr">
+      <div class="page-ttl">👤 My Profile</div>
+      <div class="page-sub">Your stats, achievements and badges</div>
+    </div>
+    
+<div class="prof-hdr" style="margin:18px 26px; display:flex; gap:20px; align-items:center;">
+    <div id="profileAvatar" onclick="openAvatarModal()" style="width:76px; height:76px; border-radius:50%; background:linear-gradient(135deg, var(--accent), var(--accent2)); display:grid; place-items:center; font-size:34px; cursor:pointer; position:relative; overflow:hidden;" class="prof-avatar-edit">
+        <span id="profileAvatarIcon">🎮</span>
+        <div style="position:absolute; bottom:0; width:100%; background:#0008; color:#fff; font-size:10px; font-weight:800; text-align:center; padding:2px 0; opacity:0; transition:opacity .2s; pointer-events:none;" class="edit-overlay">EDIT</div>
+    </div>
+    <div>
+        <div style="font-family:'Fredoka One',cursive; font-size:24px; margin-bottom:4px; display:flex; align-items:center; gap:8px;">
+            <span id="profileName" contenteditable="true" onkeydown="handleNameKey(event)" onfocus="onNameFocus()" onblur="setTimeout(onNameBlur, 200)" style="border-bottom: 2px solid transparent; transition: border-color .2s; outline: none; min-width: 50px;">Player</span>
+            <span id="nameEditTick" style="display:none; cursor:pointer; font-size:18px; color:var(--success);" onclick="saveProfileName()">✅</span>
+            <span id="nameEditIcon" style="font-size:14px; opacity:0.3; cursor:pointer;" onclick="document.getElementById('profileName').focus()">✏️</span>
+        </div>
+        <div id="profileJoined" style="color:var(--muted); font-size:12px;"></div>
+    </div>
+</div>
+
+<div id="avatarModal" style="display:none; position:fixed; inset:0; background:#000a; z-index:1000; place-items:center; backdrop-filter:blur(5px); padding:20px;">
+    <div style="background:var(--surface); border:1px solid #fff2; border-radius:20px; width:100%; max-width:400px; padding:24px; position:relative;">
+        <div style="font-family:'Fredoka One',cursive; font-size:20px; margin-bottom:20px;">Edit Avatar</div>
+        <div style="margin-bottom:15px; font-size:12px; font-weight:800; color:var(--muted); text-transform:uppercase; letter-spacing:1px;">Select Emoji</div>
+        <div style="display:grid; grid-template-columns:repeat(5, 1fr); gap:10px; margin-bottom:20px;" id="emojiGrid"></div>
+        <div style="margin-bottom:15px; font-size:12px; font-weight:800; color:var(--muted); text-transform:uppercase; letter-spacing:1px;">Select Background</div>
+        <div style="display:grid; grid-template-columns:repeat(5, 1fr); gap:10px; margin-bottom:24px;" id="colorGrid"></div>
+        <div style="display:flex; gap:10px;">
+            <button onclick="closeAvatarModal()" style="flex:1; padding:12px; background:var(--card); border:none; border-radius:10px; color:var(--text); font-weight:800; cursor:pointer;">Cancel</button>
+            <button onclick="saveAvatar()" style="flex:1; padding:12px; background:var(--accent); border:none; border-radius:10px; color:#fff; font-weight:800; cursor:pointer;">Save</button>
+        </div>
+    </div>
+</div>
+
+<style>
+.prof-avatar-edit:hover .edit-overlay { opacity: 1 !important; }
+.emoji-opt.active, .color-opt.active { border-color: var(--accent) !important; box-shadow: 0 0 0 3px #ff5f5733; }
+.color-opt.active { border-color: #fff !important; }
+</style>
+
+<div id="profileStats" style="margin:0 26px 20px; display:grid; grid-template-columns:repeat(3, 1fr); gap:10px;"></div>
+<div class="page-hdr" style="padding-top:4px; padding-bottom:12px;"><div class="page-ttl" style="font-size:20px;">🏅 Achievements</div></div>
+<div id="badgesGrid" style="margin:0 26px; display:grid; grid-template-columns:repeat(auto-fill, minmax(155px, 1fr)); gap:10px;"></div>
+
+    <div id="footerContainer"></div>
+  </main>
+  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/profile.js?v=21540"></script>
+</body>
+</html>
