@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blocks Puzzle Zoo - Play Free Online</title>
+  <meta name="description" content="Play Blocks Puzzle Zoo instantly online! No download required.">
+  <meta property="og:title" content="Blocks Puzzle Zoo - Play Free Online">
+  <meta property="og:image" content="https://img.cdn.famobi.com/portal/html5games/images/tmp/BlocksPuzzleZooTeaser.jpg?v=0.2-1cd12a5f">
+  <link rel="stylesheet" href="/assets/css/main.css?v=9">
+  <link rel="stylesheet" href="/assets/css/game.css?v=9">
+  <link rel="stylesheet" href="/assets/css/responsive.css?v=9">
+  <style>
+    .fullscreen-btn { position: absolute; top: 10px; right: 10px; z-index: 10; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 10px; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; padding: 0; outline: none; -webkit-tap-highlight-color: transparent; }
+    .fullscreen-btn svg { width: 18px; height: 18px; fill: #fff; }
+    .fullscreen-btn:hover { background: rgba(0,0,0,0.8); border-color: rgba(255,255,255,0.3); }
+    .fullscreen-btn:focus { outline: none; }
+    .frame-container:fullscreen .fullscreen-btn, .frame-container.fullscreen .fullscreen-btn { position: fixed; top: 20px; right: 20px; }
+    
+    .mute-btn { position: absolute; top: 10px; right: 54px; z-index: 10; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 10px; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; padding: 0; outline: none; -webkit-tap-highlight-color: transparent; }
+    .mute-btn svg { width: 18px; height: 18px; fill: #fff; }
+    .mute-btn:hover { background: rgba(0,0,0,0.8); border-color: rgba(255,255,255,0.3); }
+    .mute-btn:focus { outline: none; }
+    .frame-container:fullscreen .mute-btn, .frame-container.fullscreen .mute-btn { position: fixed; top: 20px; right: 64px; }
+  </style>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕹️</text></svg>">
+</head>
+<body>
+  <div id="sidebarContainer"></div>
+  <main class="main">
+    <div id="headerContainer"></div>
+    
+    <div class="detail-panel">
+      <div class="detail-bg" style="background-image: url('https://img.cdn.famobi.com/portal/html5games/images/tmp/BlocksPuzzleZooTeaser.jpg?v=0.2-1cd12a5f')"></div>
+      <div class="detail-content">
+        
+        <!-- Left Panel: Main Content (Game + Details) -->
+        <div class="detail-main">
+          
+          <div class="frame-container" id="frameContainer">
+            <button class="mute-btn" id="muteBtn" onclick="toggleMute()" title="Mute/Unmute"><svg viewBox="0 0 24 24" id="muteIcon"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+            <button class="fullscreen-btn" id="fullscreenBtn" onclick="toggleFullscreen()" title="Toggle Fullscreen"><svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg></button>
+            <iframe class="game-iframe" id="gameFrame" src="https://play.famobi.com/blocks-puzzle-zoo/A1000-10" allowfullscreen scrolling="no"></iframe>
+          </div>
+
+          <div class="detail-info-row">
+            <img class="detail-img" src="https://img.cdn.famobi.com/portal/html5games/images/tmp/BlocksPuzzleZooTeaser.jpg?v=0.2-1cd12a5f" alt="Blocks Puzzle Zoo">
+            <div class="detail-info">
+              <h1 class="detail-name">Blocks Puzzle Zoo</h1>
+              
+              <div class="detail-meta-row">
+                <div class="live-count-badge">
+                   <div class="live-dot-new"></div>
+                   <div><span id="liveCount">...</span> playing right now</div>
+                </div>
+                <div class="detail-tags">
+                  <span class="detail-tag">puzzle</span>
+                  <span class="detail-tag">⭐ 4.5</span>
+                </div>
+              </div>
+
+              <div class="game-actions">
+                <button class="btn-action btn-like" id="likeBtn" onclick="toggleLike(128)">👍 <span id="likeCountText">508</span></button>
+                <button class="btn-action" id="favBtn" onclick="toggleFavoritePage(128)">❤️ Add to Favorites</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="detail-desc-box">
+             <p>Looking for your newest gaming obsession? Look absolutely no further than <strong>Blocks Puzzle Zoo</strong>, a wonderfully crafted <strong>puzzle game</strong> that guarantees hours of non-stop, heart-pounding entertainment! Say goodbye to annoying waiting times and say hello to the absolute best <strong>free online game</strong> you'll play today.</p>
+<h2>Pure Browser Perfection</h2>
+<p>We fundamentally believe that gaming should be immediately accessible to everyone. This is exactly why <strong>Blocks Puzzle Zoo</strong> is built as a phenomenal <strong>browser game</strong> that works flawlessly and perfectly on virtually any modern device. The controls are incredibly responsive and tight, meaning every single input translates to immediate, satisfying action on your screen.</p>
+<h3>Core Highlights</h3>
+<ul>
+<li><strong>Play Instantly:</strong> Absolute <strong>no download</strong> needed. Just pure, immediate, instant gratification from the very first click.</li>
+<li><strong>Incredible Polish:</strong> From the crisp, punchy sound effects to a beautifully laid out UI/UX, everything screams absolute high quality.</li>
+<li><strong>For All Skill Levels:</strong> Perfectly easy enough for beginners to enjoy immediately, but remarkably deep enough for veterans to master over time.</li>
+</ul>
+<p>Unleash your true gaming potential and <strong>play Blocks Puzzle Zoo</strong> today! Your newest gaming addiction confidently awaits!</p>
+          </div>
+          
+        </div>
+        
+        <!-- Right Panel: Suggested Games -->
+        <div class="detail-right">
+          <div class="detail-similar-ttl">🎮 More Games You Might Like</div>
+          <div class="games-grid" id="similarGrid"></div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <div id="footerContainer"></div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/assets/js/supabase-client.js"></script>
+  <script src="/assets/js/auth.js"></script>
+  <script src="/assets/js/app.js"></script>
+  <script>
+    function toggleFullscreen() {
+        const el = document.getElementById('frameContainer');
+        const btn = document.getElementById('fullscreenBtn');
+        const iconEnter = '<svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>';
+        const iconExit = '<svg viewBox="0 0 24 24"><path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"/></svg>';
+        if (!document.fullscreenElement) {
+            if(el.requestFullscreen) el.requestFullscreen();
+            else if(el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+            else if(el.msRequestFullscreen) el.msRequestFullscreen();
+            el.classList.add('fullscreen');
+            btn.innerHTML = iconExit;
+        } else {
+            if(document.exitFullscreen) document.exitFullscreen();
+            el.classList.remove('fullscreen');
+            btn.innerHTML = iconEnter;
+        }
+    }
+    
+    let isMuted = false;
+    function toggleMute() {
+        isMuted = !isMuted;
+        const icon = document.getElementById('muteIcon');
+        const svgOff = '<path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>';
+        const svgOn = '<path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>';
+        icon.innerHTML = isMuted ? svgOff : svgOn;
+        
+        // Attempt to mute the iframe using standard generic game postMessage events
+        const frame = document.getElementById('gameFrame').contentWindow;
+        if (frame) {
+            if (isMuted) {
+                frame.postMessage('mute', '*');
+                frame.postMessage('{"event":"command","func":"mute"}', '*');
+                frame.postMessage('audio:mute', '*');
+            } else {
+                frame.postMessage('unmute', '*');
+                frame.postMessage('{"event":"command","func":"unMute"}', '*');
+                frame.postMessage('audio:unmute', '*');
+            }
+        }
+    }
+
+
+    document.addEventListener('fullscreenchange', () => {
+        const el = document.getElementById('frameContainer');
+        const btn = document.getElementById('fullscreenBtn');
+        const iconEnter = '<svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>';
+        if (!document.fullscreenElement) {
+            el.classList.remove('fullscreen');
+            btn.innerHTML = iconEnter;
+        }
+    });
+    
+    function toggleFavoritePage(gameId) {
+        let favs = JSON.parse(localStorage.getItem('arcado_favs') || '[]');
+        const btn = document.getElementById('favBtn');
+        if(favs.includes(gameId)) {
+            favs = favs.filter(id => id !== gameId);
+            btn.classList.remove('active');
+            btn.innerHTML = '❤️ Add to Favorites';
+        } else {
+            favs.push(gameId);
+            btn.classList.add('active');
+            btn.innerHTML = '❤️ Favorited';
+        }
+        localStorage.setItem('arcado_favs', JSON.stringify(favs));
+        let p = JSON.parse(localStorage.getItem('arcado_profile') || '{}');
+        if (p) { p.favCount = favs.length; localStorage.setItem('arcado_profile', JSON.stringify(p)); }
+    }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+        // Setup favorite btn state
+        
+        // Setup engagement states
+        const likes = JSON.parse(localStorage.getItem('arcado_likes') || '[]');
+        
+        if(likes.includes(128)) document.getElementById('likeBtn').classList.add('active');
+        
+        document.getElementById('likeCountText').textContent = getLikeCount(128, likes.includes(128));
+
+
+        const favs = JSON.parse(localStorage.getItem('arcado_favs') || '[]');
+        if(favs.includes(128)) {
+            const btn = document.getElementById('favBtn');
+            btn.classList.add('active');
+            btn.innerHTML = '❤️ Favorited';
+        }
+
+        // Realistic live count (Deterministic based on gameId so it matches everywhere)
+        function getPageLiveCount(gid) {
+            let baseHash = (gid * 1337) % 450;
+            let block = Math.floor(Date.now() / 5000); // 5 second blocks for small fluctuations 
+            let fluctuation = (block + gid) % 21 - 10;
+            return Math.abs(baseHash) + 50 + fluctuation;
+        }
+        
+        document.getElementById('liveCount').textContent = getPageLiveCount(128);
+        setInterval(() => {
+            document.getElementById('liveCount').textContent = getPageLiveCount(128);
+        }, 5000);
+
+        // Load similar
+        try {
+            const res = await fetch('/data/games.json');
+            const games = await res.json();
+            const similar = games.filter(x => x.category === 'puzzle' && x.id !== 128).slice(0, 6);
+            document.getElementById('similarGrid').innerHTML = similar.map(x => renderGameCard(x)).join('');
+        } catch(e) {}
+        
+        // Track play & time
+        let p = JSON.parse(localStorage.getItem('arcado_profile'));
+        if(!p) { p = { name: 'Player', joined: Date.now(), games: {}, totalMs: 0, favCount: 0 }; }
+        if (!p.games[128]) p.games[128] = { plays: 0, ms: 0 };
+        p.games[128].plays++;
+        localStorage.setItem('arcado_profile', JSON.stringify(p));
+        
+        let startTime = Date.now();
+        setInterval(() => {
+            let currentTime = Date.now();
+            let elapsed = currentTime - startTime;
+            startTime = currentTime;
+            
+            p = JSON.parse(localStorage.getItem('arcado_profile'));
+            if(p) {
+                if (!p.games[128]) p.games[128] = { plays: 1, ms: 0 };
+                p.games[128].ms += elapsed;
+                p.totalMs = (p.totalMs || 0) + elapsed;
+                localStorage.setItem('arcado_profile', JSON.stringify(p));
+            }
+        }, 5000); // Save every 5 seconds
+    });
+  </script>
+</body>
+</html>
